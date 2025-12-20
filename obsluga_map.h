@@ -19,4 +19,4 @@ void usun_mape(Mapa* mapa);
 
 double pobierz_wartosc(const Mapa* mapa, int x, int y);
 
-#endif // OBSLUGA_MAP_H
+#endif 

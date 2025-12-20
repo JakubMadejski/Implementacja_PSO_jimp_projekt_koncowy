@@ -46,3 +46,11 @@ void usun_mape(Mapa* mapa) {
     }
 }
 
+double pobierz_wartosc(const Mapa* mapa, int x, int y) {
+    if (x < 0 || x >= mapa->szerokosc || y < 0 || y >= mapa->wysokosc) {
+        fprintf(stderr, "Wspolrzedne poza zakresem mapy\n");
+        return 0.0;
+    }
+    return mapa->dane[y * mapa->szerokosc + x];
+}
+
