@@ -5,6 +5,6 @@
 
 double random_double();
 
-double random_range(double min, double max);
+double random_w_zakresie(double min, double max);
 
 #endif
