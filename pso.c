@@ -3,7 +3,7 @@
 #include <math.h>
 #include "pso.h"
 #include <stddef.h>
-/* Forward-declare random helpers from narzedzia_pomocznicze.c to avoid include ordering issues */
+
 double random_double();
 double random_w_zakresie(double min, double max);
 
@@ -60,7 +60,7 @@ void aktualizuj_roj(Roj *r, double waga, double c1, double c2, const Mapa* mapa)
         c->x += c->vx;
         c->y += c->vy;
 
-        /* boundary handling: reflect with damping when hitting map edges */
+     
         if (c->x < 0.0) {
             c->x = 0.0;
             c->vx = -c->vx * 0.5;
