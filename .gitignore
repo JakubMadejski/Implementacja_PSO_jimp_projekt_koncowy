@@ -1,2 +1,10 @@
 log.csv
 pso
+.o
+logger.o
+.gitignore
+.gitignore
+main.o
+pso.o
+obsluga_map.o
+narzedzia_pomocznicze.o
