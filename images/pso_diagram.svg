@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <rect width="100%" height="100%" fill="#f7f9fc"/>
+  <g font-family="sans-serif" font-size="14">
+    <text x="20" y="24" fill="#333">PSO — przykładowy snapshot cząstek</text>
+  </g>
+  <!-- particles -->
+  <circle cx="120" cy="90" r="6" fill="#ff6b6b" />
+  <circle cx="180" cy="60" r="6" fill="#ffd93d" />
+  <circle cx="240" cy="120" r="6" fill="#6bcB77" />
+  <circle cx="300" cy="80" r="6" fill="#4d8cff" />
+  <circle cx="360" cy="40" r="6" fill="#b388eb" />
+  <circle cx="420" cy="140" r="6" fill="#ff7ab6" />
+  <circle cx="480" cy="100" r="6" fill="#00c2a8" />
+  <circle cx="540" cy="70" r="6" fill="#ff914d" />
+  <circle cx="600" cy="110" r="6" fill="#7bd389" />
+  <!-- best position marker -->
+  <g>
+    <circle cx="700" cy="50" r="10" fill="#ffd700" stroke="#333" stroke-width="2" />
+    <text x="690" y="80" fill="#333" font-size="12">pozycja globalna (best)</text>
+  </g>
+  <!-- paths (faint) -->
+  <g stroke="#a0b0c0" stroke-opacity="0.25" stroke-width="1">
+    <path d="M120 90 Q160 70 200 80" fill="none"/>
+    <path d="M180 60 Q220 50 260 70" fill="none"/>
+    <path d="M240 120 Q300 100 360 80" fill="none"/>
+  </g>
+</svg>

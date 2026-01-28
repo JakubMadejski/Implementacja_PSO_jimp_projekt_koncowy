@@ -46,58 +46,6 @@ Domyślne wartości współczynników PSO (jeśli nie użyjesz `-c`): `w = 0.5`,
 
 ## Pliki w repozytorium
 
-![build](https://img.shields.io/badge/build-passing-brightgreen)
-![language](https://img.shields.io/badge/language-C-007ec6)
-![license](https://img.shields.io/badge/license-MIT-yellow)
-
-# Implementacja PSO — projekt końcowy
-
-Krótki, czytelny opis implementacji algorytmu Particle Swarm Optimization (PSO) w języku C.
-
-## Opis
-
-To repozytorium zawiera implementację PSO wraz z narzędziami pomocniczymi do obsługi mapy, logowania i konfiguracji. Kod jest napisany w C i przygotowany do skompilowania za pomocą dostarczonego `Makefile`.
-
-## Wymagania
-
-- Kompilator C (np. `gcc`)
-- `make`
-
-## Budowanie
-
-W katalogu projektu uruchom:
-
-```bash
-make
-```
-
-To powinno wygenerować plik wykonywalny (`main` lub zgodnie z konfiguracją `Makefile`).
-
-## Uruchamianie
-
-Użycie programu (wymagany argument: plik mapy):
-
-```bash
-./main <plik_mapy> -p <liczba_czasteczek> -i <liczba_iteracji> -c <plik_konfig> -n <zapisz_co_n>
-```
-
-Przykład:
-
-```bash
-./main test_map.txt -p 50 -i 200 -c pso_config.txt -n 10
-```
-
-Flagi i wartości domyślne:
-
-- `-p` : liczba cząstek (domyślnie `30`)
-- `-i` : liczba iteracji (domyślnie `100`)
-- `-c` : plik konfiguracyjny z wartościami PSO (opcjonalny)
-- `-n` : zapisz stan co N iteracji (domyślnie `1`)
-
-Domyślne wartości współczynników PSO (jeśli nie użyjesz `-c`): `w = 0.5`, `c1 = 1.0`, `c2 = 1.0`.
-
-## Pliki w repozytorium
-
 - `main.c` — punkt wejścia programu.
 - `pso.c`, `pso.h` — implementacja algorytmu PSO.
 - `pso_config.txt` — przykładowa konfiguracja parametrów PSO.
@@ -129,39 +77,21 @@ Jeśli plik nie zostanie podany lub nie zawiera poprawnych wartości, użyte zos
 
 Domyślnie program zapisuje dane do `log.csv`. Możesz analizować ten plik lub użyć własnych narzędzi do wizualizacji wyników optymalizacji.
 
-## Kolorki (README i terminal)
+## Demo & galeria
 
-- Dodałem kolorowe badge'y na górze pliku README.
-- Poniżej przykład jak wypisać kolorowy tekst w terminalu (ANSI escape codes). Aby zobaczyć kolory w terminalu, użyj polecenia:
+Poniżej są dwa przykładowe obrazy (statyczne) pokazujące wygląd wyjścia i przykładowy snapshot cząstek PSO. Możesz podmienić je na zrzuty ekranu lub GIF-y wygenerowane podczas uruchomienia programu.
 
-```bash
-echo -e "\e[31mCzerwony tekst\e[0m"   # czerwony
-echo -e "\e[32mZielony tekst\e[0m"   # zielony
-echo -e "\e[33mŻółty tekst\e[0m"    # żółty
-echo -e "\e[34mNiebieski tekst\e[0m"  # niebieski
-```
+![Terminal demo](images/terminal_demo.svg)
 
-Przykładowy fragment C drukujący kolorowy tekst:
+![PSO snapshot](images/pso_diagram.svg)
 
-```c
-#include <stdio.h>
+Jeśli chcesz, mogę wygenerować animowany GIF z serii snapshotów — daj znać.
 
-int main() {
-	printf("\x1b[31mCzerwony z C\x1b[0m\n");
-	printf("\x1b[32mZielony z C\x1b[0m\n");
-	return 0;
-}
-```
 
-Uwaga: GitHub Markdown ignoruje style inline CSS w większości przypadków, więc do kolorów w README najlepiej używać badge'ów (obrazy) lub grafik. Sekcja powyżej pokazuje jak uzyskać kolor w lokalnym terminalu.
 
 ## Testy
 
 Do szybkiego testu użyj `test_map.txt` jako wejścia (jeżeli program obsługuje mapy z tego pliku). Uruchom program i sprawdź `log.csv` oraz wyjście w konsoli.
-
-## Wkład i modyfikacje
-
-- Chcesz dodać nowe funkcje? Otwórz pull request lub skontaktuj się z autorem projektu.
 
 ## Licencja
 
