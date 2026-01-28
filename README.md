@@ -23,13 +23,26 @@ To powinno wygenerować plik wykonywalny (`main` lub zgodnie z konfiguracją `Ma
 
 ## Uruchamianie
 
-Przykładowe uruchomienie programu:
+Użycie programu (wymagany argument: plik mapy):
 
 ```bash
-./main
+./main <plik_mapy> -p <liczba_czasteczek> -i <liczba_iteracji> -c <plik_konfig> -n <zapisz_co_n>
 ```
 
-Program korzysta z pliku konfiguracyjnego `pso_config.txt` (w katalogu głównym). Edytuj go przed uruchomieniem, aby zmienić parametry algorytmu (np. liczba cząstek, liczba iteracji, współczynniki PSO).
+Przykład:
+
+```bash
+./main test_map.txt -p 50 -i 200 -c pso_config.txt -n 10
+```
+
+Flagi i wartości domyślne:
+
+- `-p` : liczba cząstek (domyślnie `30`)
+- `-i` : liczba iteracji (domyślnie `100`)
+- `-c` : plik konfiguracyjny z wartościami PSO (opcjonalny)
+- `-n` : zapisz stan co N iteracji (domyślnie `1`)
+
+Domyślne wartości współczynników PSO (jeśli nie użyjesz `-c`): `w = 0.5`, `c1 = 1.0`, `c2 = 1.0`.
 
 ## Pliki w repozytorium
 
@@ -44,14 +57,21 @@ Program korzysta z pliku konfiguracyjnego `pso_config.txt` (w katalogu głównym
 
 ## Konfiguracja (`pso_config.txt`)
 
-Plik konfiguracyjny zawiera parametry sterujące zachowaniem PSO. Typowe parametry, które możesz zobaczyć i zmienić:
+Jeśli podasz plik konfiguracyjny przez `-c`, program wczyta trzy wartości zmiennoprzecinkowe: `w`, `c1`, `c2`.
 
-- `num_particles` — liczba cząstek
-- `iterations` — liczba iteracji
-- `w` — współczynnik bezwładności
-- `c1`, `c2` — współczynniki przyciągania do najlepszej pozycji
+Format pliku: trzy liczby oddzielone spacjami lub nowymi liniami, np.:
 
-Uwaga: dokładne nazwy i format parametrów zależą od implementacji w `pso.c` — sprawdź plik, by dopasować wartości.
+```text
+0.6 1.2 1.2
+```
+
+gdzie:
+
+- `w`  — współczynnik bezwładności
+- `c1` — współczynnik przyciągania do najlepszej pozycji cząsteczki
+- `c2` — współczynnik przyciągania do najlepszej pozycji globalnej
+
+Jeśli plik nie zostanie podany lub nie zawiera poprawnych wartości, użyte zostaną wartości domyślne (`w=0.5`, `c1=1.0`, `c2=1.0`).
 
 ## Wyniki i logowanie
 
@@ -64,12 +84,11 @@ Do szybkiego testu użyj `test_map.txt` jako wejścia (jeżeli program obsługuj
 ## Wkład i modyfikacje
 
 - Chcesz dodać nowe funkcje? Otwórz pull request lub skontaktuj się z autorem projektu.
-- Jeśli chcesz, mogę dodać przykładowy skrypt do wizualizacji wyników lub zautomatyzowane testy.
 
 ## Licencja
 
-Brak pliku licencyjnego w repozytorium. Jeśli chcesz opublikować projekt, dodaj proszę plik `LICENSE` z odpowiednią licencją (np. MIT).
+Ten projekt jest udostępniony na licencji MIT — zobacz plik `LICENSE`.
 
 ---
 
-Autor: projekt studencki — edytuj i dostosuj opis oraz parametry konfiguracyjne do własnych potrzeb.
+Autor: Jakub Madejski (2026), Michał Walentynowicz (2026)
